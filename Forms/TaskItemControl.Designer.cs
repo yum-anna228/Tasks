@@ -32,6 +32,7 @@
             btnEdit = new Button();
             button1 = new Button();
             chkCompleted = new CheckBox();
+            btnInfo = new Button();
             SuspendLayout();
             // 
             // lblTitle
@@ -73,12 +74,23 @@
             chkCompleted.TabIndex = 3;
             chkCompleted.UseVisualStyleBackColor = true;
             // 
+            // btnInfo
+            // 
+            btnInfo.Location = new Point(465, 5);
+            btnInfo.Name = "btnInfo";
+            btnInfo.Size = new Size(28, 29);
+            btnInfo.TabIndex = 4;
+            btnInfo.Text = "i";
+            btnInfo.UseVisualStyleBackColor = true;
+            btnInfo.Click += btnInfo_Click;
+            // 
             // TaskItemControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.Transparent;
+            Controls.Add(btnInfo);
             Controls.Add(chkCompleted);
             Controls.Add(button1);
             Controls.Add(btnEdit);
@@ -97,5 +109,6 @@
         private Button btnEdit;
         private Button button1;
         private CheckBox chkCompleted;
+        private Button btnInfo;
     }
 }

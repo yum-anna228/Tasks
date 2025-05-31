@@ -37,7 +37,7 @@
             if (_task != null)
             {
                 lblTitle.Text = _task.Title;
-                chkCompleted.Checked = _task.IsCompleted; 
+                chkCompleted.Checked = _task.IsCompleted;
             }
         }
 
@@ -56,6 +56,21 @@
         private void button1_Click(object sender, EventArgs e)
         {
             DeleteClicked?.Invoke(_task);
+        }
+
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            ShowTaskDetails(_task);
+        }
+
+        private void ShowTaskDetails(TaskItem task)
+        {
+            string message = $"Название: {task.Title}\n" +
+                              $"Исполнитель: {task.AssignedTo}\n" +
+                              $"Срок выполнения: {(task.DueDate.HasValue ? task.DueDate.Value.ToShortDateString() : "Не указан")}\n" +
+                              $"Статус: {(task.IsCompleted ? "Выполнено" : "В процессе")}";
+
+            MessageBox.Show(message, "Детали задачи", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -20,5 +20,15 @@
         /// </summary>
         public bool IsCompleted { get; set; }
 
+        /// <summary>
+        /// тот, кто выполняет задачи
+        /// </summary>
+        public string AssignedTo { get; set; } = string.Empty;
+
+        /// <summary>
+        /// срок
+        /// </summary>
+        public DateTime? DueDate { get; set; }
+
     }
 }
